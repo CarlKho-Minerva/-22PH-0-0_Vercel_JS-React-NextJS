@@ -1,0 +1,145 @@
+Eureka! It's super easy pala
+
+I know these concepts, I just didn't know the terms. DOM is basically the <> tags and the childrens of those. So the child of <div id="app"> is <h1> in code snippet.
+    <body>
+        <div id="app"></div>
+        <script type="text/javascript">
+            const app = document.getElementById('app');
+            const header = document.createElement('h1');
+            const headerContent = document.createTextNode(
+                'Develop. Preview. Ship. Text nodes are yung <> tags pala!! 🚀'
+            )
+            header.appendChild(headerContent);
+            app.appendChild(header);
+        </script>
+    </body>
+
+
+Imperative programming is like giving a chef step-by-step instructions on how to make a pizza. Declarative programming is like ordering a pizza without being concerned about the steps it takes to make the pizza. 🍕
+
+
+//REACT STUFF
+If you struggle to think of the best way immediately, start by adding enough state that you’re definitely sure that all the possible visual states are covered:
+
+const [isEmpty, setIsEmpty] = useState(true);
+const [isTyping, setIsTyping] = useState(false);
+const [isSubmitting, setIsSubmitting] = useState(false);
+const [isSuccess, setIsSuccess] = useState(false);
+const [isError, setIsError] = useState(false);
+
+Your first idea likely won’t be the best, but that’s ok—refactoring state is a part of the process!
+
+RECAP FOR useState
+Declarative programming means describing the UI for each visual state rather than micromanaging the UI (imperative).
+When developing a component:
+Identify all its visual states.
+Determine the human and computer triggers for state changes.
+Model the state with useState.
+Remove non-essential state to avoid bugs and paradoxes.
+Connect the event handlers to set state.
+
+
+//CONTINUE NEXT
+Note that browsers don’t understand JSX out of the box, so you’ll need a JavaScript compiler, such as a Babel, to transform your JSX code into regular JavaScript.
+Ok, ReactJS or frameworks are just shortcuts of Vanilla JS (?)
+JSX requires tags to be explicitly closed: self-closing tags like <img> must become <img />, and wrapping tags like <li>oranges must be written as <li>oranges</li>.
+
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! https://transform.tools/html-to-jsx !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+
+
+type="text/jsx" disables smart color formatting
+
+
+COMPONENTS
+Encapsulate HTML snippets in a single JSX, then mix and match!
+React components are regular JavaScript functions, but their names must start with a capital letter or they won’t work!
+
+Comments need {/*comment here*/}
+
+function Header() {
+            return <h1>Uhm is this right? What did I do wrong? With Homepage.</h1>;
+        }
+
+        function Content() {
+            return <p>Hopefully content isn't a reserved word. Kundi, GG.</p>;
+        }
+
+        function Footer() {
+            return (
+                <>
+                    <a href="https://carlkho.com/" target="_blank">Visit Carl's website!!!</a>
+                    <br />
+                    <br />
+                    <hr />
+                    <br />
+                    <h1> THIS IS SUPER AMAZING!</h1>
+                    <p>Test with multiple elements</p>
+                </>
+            );
+        }
+
+        {/*strictly finsihed components only*/}
+        function Homepage() {
+            return <div>
+                <Header />
+                <Content />
+                <Footer />
+            </div>;
+        }
+
+        ReactDOM.render(<Homepage />, app);
+
+When you write a default import, you can put any name you want after import. For example, you could write import Banana from './button.js' instead and it would still provide you with the same default export.
+I PREFER NAMED (VS DEFAULT) EXPORT/IMPORTS FOR CONSISTENCY
+
+import Profile from './Profile.js';  <---- sample named export
+
+
+DATA WITH PROPS
+Variables need to be {}-ed 
+props is renamable by {newName} BUT it can also do props.title
+
+        function Header({ title }) {
+            console.log(title);
+            return <h1>{ title }</h1>;
+        }
+
+        function HomePage() {
+            return (<div>
+                <Header title="React 💙" />
+            </div>
+            );
+        }
+
+Array de la Pena
+array.map() stronk. Now I just need to know how arrow function works
+
+https://arraythis.com/ 
+["Tapulanay", "na", "ta", "ani", "dong", "kapoy", "sig", "comma", "hahaha", "gwapo"];
+
+function HomePage() {
+            const names = ['Carl', 'Torbjorn', 'Reinhardt'];
+
+            return (<div>
+                <Header title="Array.map testing" />
+
+                <ul>
+                    {names.map((name) => (
+                        <li>{name}</li>
+                    ))}
+                </ul>
+            </div>
+            );
+        }
+
+
+In JSX, {cond ? <A /> : <B />} means “if cond, render <A />, otherwise <B />”.
+In JSX, {cond && <A />} means “if cond, render <A />, otherwise nothing”.
+
+
+ADVANCED w/ keys and multiple fields (like a JSON): https://codesandbox.io/s/etqusf?file=/index.js:0-256&from-sandpack=true
+
+
+
+INTERACTIVITY WITH STATES
+https://nextjs.org/learn/foundations/from-javascript-to-react/adding-interactivity-with-state

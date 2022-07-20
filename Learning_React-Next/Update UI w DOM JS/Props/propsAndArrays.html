@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/jsx">
+        const app = document.getElementById('app');
+
+        function Header({ title }) {
+            console.log(title);
+            return <h1>{title}</h1>;
+        }
+
+        function HomePage() {
+            const names = ['Carl', 'Torbjorn', 'Reinhardt'];
+            const activities = ["Tapulanay", "na", "ta", "ani", "dong", "kapoy", "sig", "comma", "hahaha", "gwapo"];
+            const tests = ['Nothing\'s', 'gonna', 'change', 'my', 'love', 'for', 'you', 'Pacquiao', 'idk', 'spelling', 'lmao', 'help', 'array', 'ez'];
+
+            return (<div>
+                <Header title="Array.map testing" />
+
+                <ul>
+                    {names.map((name) => (
+                        <li key={name}> {name} </li>
+                    ))}
+                </ul>
+
+                <ol>
+                    {activities.map((activity) => (
+                    <li key={activity}> {activity} </li>
+                    ))}
+                </ol>
+
+                <ul>
+                    {tests.map((test) => (
+                        <li key={test}> {test} </li>
+                    ))}
+                </ul>
+
+            </div>
+            );
+        }
+
+        ReactDOM.render(<HomePage />, app)
+    </script>
+</body>
+
+</html>

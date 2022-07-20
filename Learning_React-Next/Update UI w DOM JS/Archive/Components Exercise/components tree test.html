@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with React</title>
+</head>
+
+<body>
+    <div id="app"></div>
+
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/jsx">
+        const app = document.getElementById('app');
+
+        function Header() {
+            return <h1>Uhm is this right? What did I do wrong? With Homepage.</h1>;
+        }
+
+        function Content() {
+            return <p>Hopefully content isn't a reserved word. Kundi, GG.</p>;
+        }
+
+        function Footer() {
+            return (
+                <>
+                    <a href="https://carlkho.com/" target="_blank">Visit Carl's website!!!</a>
+                    <br />
+                    <br />
+                    <hr />
+                    <br />
+                    <h1> THIS IS SUPER AMAZING!</h1>
+                    <p>Test with multiple elements</p>
+                </>
+            );
+        }
+
+        function Profile() {
+            return (
+                <img src="Carl Chibi.jpg" 
+                alt="Cute"
+                />
+            );
+        }
+
+        {/*strictly finished components only*/}
+        function Homepage() {
+            return (
+                <>
+                <Header />
+                <Content />
+                <Profile />
+                <Footer />
+            </>
+            );
+        }
+        
+
+        ReactDOM.render(<Homepage />, app);
+
+
+
+    </script>
+
+</body>
+
+</html>
